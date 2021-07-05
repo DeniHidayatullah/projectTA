@@ -1,0 +1,135 @@
+body{
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #0E156E;
+}
+
+#test-form .limiter input {
+  width: 100%;
+  height: 40px;
+}
+
+/* line 194, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_gallery.scss */
+#test-form .boxed_btn_green {
+  width: 100%;
+  height: 50px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+}
+
+.loginform {
+  background: #fff;
+  display: inline-block;
+  width: 558px;
+  padding: 60px 40px;
+  border-radius: 5px;
+  z-index: 9;
+}
+
+@media (max-width: 767px) {
+  /* line 110, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+  .loginform {
+    width: 320px;
+    padding: 60px 30px;
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 110, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+  .loginform {
+    width: 420px !important;
+    padding: 30px 20px;
+  }
+}
+
+/* line 129, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+.loginform .logo {
+  margin-bottom: 50px;
+}
+
+@media (max-width: 767px) {
+  /* line 129, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+  .loginform .logo {
+    margin-bottom: 30px;
+  }
+}
+
+/* line 135, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+.loginform h3 {
+  font-size: 24px;
+  color: #1F1F1F;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  /* line 135, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+  .loginform h3 {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 110, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+  .loginform h3 {
+    font-size: 15px;
+  }
+}
+
+/* line 144, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+.loginform .boxed-btn3 {
+  width: 100%;
+  text-transform: capitalize;
+}
+
+/* line 148, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+.loginform .boxed_btn_green {
+  width: 100%;
+}
+
+.loginform a {
+  font-size: 15px;
+  font-family:  
+  color: #0181F5;
+  margin-top: 10px;
+  font-weight: 200;
+}
+
+.login_inner input {
+  width: 100%;
+  margin-bottom: 15px;
+  color: #000;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  height: 50px;
+  padding-left: 30px;
+}
+.login_inner .error{
+  text-align: center;
+}
+/* line 253, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_gallery.scss */
+.login_inner input:focus {
+  outline: none;
+}
+
+/* line 256, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_gallery.scss */
+.login_inner input::placeholder {
+  color: #919191;
+  font-size: 16px;
+}
+
+#tombol{
+  color: #fff;
+}
+
+.doen_have_acc{
+  font-size: 16px;
+  color: #0181F5;
+  margin-top: 33px;
+  font-weight: 400;
+}
+
