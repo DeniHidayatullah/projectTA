@@ -20,7 +20,6 @@
 
         <div class="content mt-3">
             <div class="card">
-            
         <?php foreach ($data as $d) {?>
         <?php 
             $hargaasli = $d['harga_asli'];

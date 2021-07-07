@@ -55,6 +55,12 @@ class Model_penjualan extends CI_Model {
         return $query->result();
     }
 
+    function sum()
+    {
+        $query = $this->db->query("SELECT SUM(total) as grand from transaksi_penjualan");
+        return $query->result();
+    }
+
 	public function Delete($table, $where)
       {
       $res = $this->db->delete($table, $where); // Kode ini digunakan untuk menghapus record yang sudah ada

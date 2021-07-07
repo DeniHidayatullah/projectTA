@@ -81,9 +81,17 @@
                         <span>Kredit Musiman</span>
                     <?php } ?></td>
                 <td class="text-center"><?= $row->jumlah; ?></td>
-                <td class="text-center"><?= $row->sub_total; ?></td>
+                <td class="text-center"><?= $row->total; ?></td>
             </tr>
         <?php }; ?>
+        <?php
+            foreach ($sum as $r) {
+            ?>
+                <tr>
+                    <td colspan="9" align="right"><strong>Jumlah Total</strong></td>
+                    <td colspan="1" align="right"><strong><?= $r->grand;?> </strong></td>
+                </tr>
+            <?php }; ?>
     </table>
 
     <script>

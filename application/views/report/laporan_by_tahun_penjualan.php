@@ -50,40 +50,52 @@
     <br />
 
     <table border="1" class="table">
-        <tr>
-            <th>Nomor Faktur</th>
-            <th>Nama Barang</th>
-            <th>Jenis Barang</th>
-            <th>Type Barang</th>
-            <th>Nama Pembeli</th>
-            <th>Alamat</th>
-            <th>No Telpon</th>
-            <th>Jenis Pembayaran</th>
-            <th>Jumlah</th>
-            <th>Total</th>
-        </tr>
-        <?php
-        foreach ($bytahun as $row) {
-        ?>
+        <thead>
             <tr>
-                <td class="text-center"><?= $row->nomor_faktur; ?></td>
-                <td class="text-center"><?= $row->barang_nama; ?></td>
-                <td class="text-center"><?= $row->jenis_bahan; ?></td>
-                <td class="text-center"><?= $row->type_barang; ?></td>
-                <td class="text-center"><?= $row->nama_pembeli; ?></td>
-                <td class="text-center"><?= $row->alamat_pembeli; ?></td>
-                <td class="text-center"><?= $row->no_telp; ?></td>
-                <td class="text-center"> <?php if ($row->id_jenis_pembayaran == '1') { ?>
-                        <span>Cash</span>
-                    <?php } elseif ($row->id_jenis_pembayaran == '2') { ?>
-                        <span>Kredit Bulanan</span>
-                    <?php } elseif ($row->id_jenis_pembayaran == '3') { ?>
-                        <span>Kredit Musiman</span>
-                    <?php } ?></td>
-                <td class="text-center"><?= $row->jumlah; ?></td>
-                <td class="text-center"><?= $row->sub_total; ?></td>
+                <th>Nomor Faktur</th>
+                <th>Nama Barang</th>
+                <th>Jenis Barang</th>
+                <th>Type Barang</th>
+                <th>Nama Pembeli</th>
+                <th>Alamat</th>
+                <th>No Telpon</th>
+                <th>Jenis Pembayaran</th>
+                <th>Jumlah</th>
+                <th>Total</th>
             </tr>
-        <?php }; ?>
+        </thead>
+        <tbody>
+            <?php
+            foreach ($bytahun as $row) {
+            ?>
+                <tr>
+                    <td class="text-center"><?= $row->nomor_faktur; ?></td>
+                    <td class="text-center"><?= $row->barang_nama; ?></td>
+                    <td class="text-center"><?= $row->jenis_bahan; ?></td>
+                    <td class="text-center"><?= $row->type_barang; ?></td>
+                    <td class="text-center"><?= $row->nama_pembeli; ?></td>
+                    <td class="text-center"><?= $row->alamat_pembeli; ?></td>
+                    <td class="text-center"><?= $row->no_telp; ?></td>
+                    <td class="text-center"> <?php if ($row->id_jenis_pembayaran == '1') { ?>
+                            <span>Cash</span>
+                        <?php } elseif ($row->id_jenis_pembayaran == '2') { ?>
+                            <span>Kredit Bulanan</span>
+                        <?php } elseif ($row->id_jenis_pembayaran == '3') { ?>
+                            <span>Kredit Musiman</span>
+                        <?php } ?></td>
+                    <td class="text-center"><?= $row->jumlah; ?></td>
+                    <td class="text-center"><?= $row->total; ?></td>
+                </tr>
+            <?php }; ?>
+            <?php
+            foreach ($sum as $r) {
+            ?>
+                <tr>
+                    <td colspan="9" align="right"><strong>Jumlah Total</strong></td>
+                    <td colspan="1" align="right"><strong><?= $r->grand;?> </strong></td>
+                </tr>
+            <?php }; ?>
+        </tbody>
     </table>
 
     <script>

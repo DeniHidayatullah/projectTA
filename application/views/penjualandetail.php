@@ -6,7 +6,7 @@
 					</div>
 				</div>
 				<div class="card shadow">
-										<?php foreach ($all_detail_penjualan as $penjualan): ?>
+				<?php foreach ($all_detail_penjualan as $penjualan): ?>
 					<div class="card-header"><strong>Detail Penjualan - <?= $penjualan->nomor_faktur ?></strong></div>
 					<div class="card-body">
 						<div class="row">
@@ -42,7 +42,7 @@
 										<td><?= $penjualan->tanggal ?></td>
 										<td><strong>Foto Ktp</strong></td>
 										<td>:</td>
-										<td><?= $penjualan->foto_ktp ?></td>
+										<td><img src="<?= base_url(); ?>./img/ktp/<?= $penjualan->foto_ktp; ?>" class="card-img"></td>
 									</tr>
 								</table>
 							</div>
@@ -51,13 +51,13 @@
 						<div class="row">
 							<div class="col-md-12">
 								<table class="table table-bordered">
-									<thead><?php 
+									<thead>
+									<?php 
                                             if ( $penjualan->id_jenis_pembayaran==1) { ?>
 										<tr>
 											<td><strong>No</strong></td>
 											<td><strong>Tanggal Bayar</strong></td>
 											<td><strong>Harga</strong></td>
-											<td><strong>Dp</strong></td>
 											<td><strong>Bayar</strong></td>
 											<td><strong>Status Bayar</strong></td>
 										</tr>
@@ -67,12 +67,44 @@
 												<td><?= $no++ ?></td>
 										        <td><?= $penjualan->tanggal ?></td>
 												<td>Rp <?= number_format($penjualan->harga, 0, ',', '.') ?></td>
-												<td><?= '0'?></td>
 											<td>Rp <?= number_format($penjualan->total, 0, ',', '.') ?></td>
 												<td><?= 'Lunas' ?></td>
 											</tr>
+										<?php 
+                                           } else if ($penjualan->id_jenis_pembayaran==2) { 
+											  $bayar= $penjualan->total/4; 
+										  ?>
+										  <a href="<?php echo base_url('Pembayaran/proses_tambah'."/".$penjualan->nomor_faktur."/".$bayar) ?>" class="btn btn-success btn-sm btn-show-add">
+											  <span class="icon text-white-50">
+												  <i class="fa fa-plus"></i>
+											  </span>
+											  <span class="text">Bayar Kredit</span>
+										  </a>
+										<tr>
+											<td><strong>No</strong></td>
+											<td><strong>Tanggal Bayar</strong></td>
+											<td><strong>Harga</strong></td>
+											<td><strong>Total</strong></td>
+											<td><strong>Bayar</strong></td>
+											<td><strong>Status Bayar</strong></td>
+										</tr>
+									<tbody>
+											<tr>
+												<td><?= $no++ ?></td>
+										        <td><?= $penjualan->tanggal ?></td>
+												<td>Rp <?= number_format($penjualan->harga, 0, ',', '.') ?></td>
+												<td>Rp <?= number_format($penjualan->total, 0, ',', '.') ?></td>
+												<td>Rp <?= number_format($bayar, 0, ',', '.') ?></td>
+											<?php 
+                                            if ( $penjualan->total==1) { ?>
+												<td><?= 'Lunas' ?></td><?php 
+                                            }else { ?>
+												<td><?= 'Belum Lunas' ?></td>
+												<?php }?>
+											</tr>
 										<?php } ?>
 									</tbody>
+									
 								</table>
 							</div>
 						</div>

@@ -72,7 +72,7 @@
                   </div>
                   <div class="form-group">
                     <label>Foto Barang</label>
-                    <input class="form-control-file " type="file" name="foto" accept="foto/*"/>
+                    <input class="form-control-file " type="file" name="foto" accept="image/*"/>
                     <!-- <input class="form-control" type="file" id="foto" name="foto" required value="<?php echo $foto; ?>" > -->
                   </div>
                   <!-- <input class="btn btn-info btn-icon-split" type="submit" name="submit" value="Update"> -->

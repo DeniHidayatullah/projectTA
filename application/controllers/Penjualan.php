@@ -75,7 +75,7 @@ class Penjualan extends CI_Controller {
         $data_penjualan['nama_pembeli']= $this->input->post('nama_pembeli_hidden');
         $data_penjualan['alamat_pembeli'] = $this->input->post('alamat_pembeli_hidden');
         $data_penjualan['no_telp']= $this->input->post('no_telp_hidden');
-        $data_penjualan['foto_ktp' ]= $this->input->post('foto_ktp_hidden');
+        $data_penjualan['foto_ktp' ]= $this->_uploadImage();
 
 		$data_detail_penjualan = [];
 
@@ -107,12 +107,12 @@ class Penjualan extends CI_Controller {
         
         $data_penjualan['nomor_faktur'] = $this->input->post('nomor_faktur');
         $data_penjualan['tanggal'] = $this->input->post('tanggal');
-        $data_penjualan['total'] = $this->input->post('total_hidden');
         $data_penjualan['id_jenis_pembayaran'] = $this->input->post('id_jenis_pembayaran_hidden');
         $data_penjualan['nama_pembeli']= $this->input->post('nama_pembeli_hidden');
         $data_penjualan['alamat_pembeli'] = $this->input->post('alamat_pembeli_hidden');
         $data_penjualan['no_telp']= $this->input->post('no_telp_hidden');
         $data_penjualan['foto_ktp' ]= $this->_uploadImage();
+        $data_penjualan['total'] = $this->input->post('Grand_Total');
 
 		$data_detail_penjualan = [];
 
@@ -202,6 +202,7 @@ class Penjualan extends CI_Controller {
         $bulanakhir = htmlspecialchars($this->input->post('bulanakhir', true));
 
         $data['bybulan'] = $this->m_penjualan->filterbybulan($tahun1, $bulanawal1, $bulanakhir);
+        $data['sum'] = $this->m_penjualan->sum();
         $this->load->view('report/laporan_by_bulan_penjualan', $data);
     }
 
@@ -213,6 +214,7 @@ class Penjualan extends CI_Controller {
         $tahun2 = htmlspecialchars($this->input->post('tahun2', true));
 
         $data['bytahun'] = $this->m_penjualan->filterbytahun($tahun2);
+        $data['sum'] = $this->m_penjualan->sum();
         $this->load->view('report/laporan_by_tahun_penjualan', $data);
     }
 

@@ -15,5 +15,10 @@ class M_pembayaran extends CI_Model{
 		$query = $this->db->get($this->_table);
 		return $query->result();
 	}
+	
+	public function insertAngsuran($data)
+    {
+        return $this->db->insert('angsuran', $data);
+    }
 
 }

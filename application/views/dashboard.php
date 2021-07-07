@@ -102,7 +102,7 @@
                         data: {
                             labels: [<?=implode(",",$title);?>],
                             datasets: [{
-                                label: 'Service',
+                                label: 'Pembelian',
                                 data: [<?=implode(",",$valuepembelian);?>],
                                 backgroundColor: "rgba(255, 99, 132, 0.2)",
                                 borderColor: "rgba(255, 99, 132, 1)",

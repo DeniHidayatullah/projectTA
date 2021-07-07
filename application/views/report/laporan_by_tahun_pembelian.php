@@ -70,6 +70,14 @@
                 <td class="text-center"><?= $row->total; ?></td>
             </tr>
         <?php }; ?>
+        <?php
+            foreach ($sum as $r) {
+            ?>
+                <tr>
+                    <td colspan="5" align="right"><strong>Jumlah Total</strong></td>
+                    <td colspan="1" align="right"><strong><?= $r->grand;?> </strong></td>
+                </tr>
+            <?php }; ?>
     </table>
 
     <script>

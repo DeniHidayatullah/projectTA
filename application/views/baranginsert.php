@@ -76,7 +76,7 @@
                   </div>
                   <div class="form-group">
                     <label>Foto Barang</label>
-                    <input class="form-control" type="file" id="foto" name="foto" required>
+                    <input class="form-control" type="file" id="foto" name="foto">
                   </div>
                   <button type="submit" class="btn btn-info btn-icon-split">
                     <span class="icon text-white-50">

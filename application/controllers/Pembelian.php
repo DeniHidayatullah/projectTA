@@ -106,6 +106,8 @@ class Pembelian extends CI_Controller {
         $jumlah = $_POST['jumlah'];
         $total = $_POST['total'];
         $tanggal = $_POST['tanggal'];
+        
+        $totalharga=$harga*$jumlah;
 
         $data = array(
             'nama_barang' => $nama_barang,
@@ -113,7 +115,7 @@ class Pembelian extends CI_Controller {
             'type_barang' => $type_barang,
             'harga' => $harga,
             'jumlah' => $jumlah,
-            'total' => $total,
+            'total' => $totalharga,
             'tanggal' => $tanggal
          );
         $where = array(
@@ -153,6 +155,7 @@ class Pembelian extends CI_Controller {
         $bulanakhir = htmlspecialchars($this->input->post('bulanakhir', true));
 
         $data['bybulan'] = $this->v->filterbybulan($tahun1, $bulanawal1, $bulanakhir);
+        $data['sum'] = $this->v->sum();
         $this->load->view('report/laporan_by_bulan_pembelian', $data);
     }
 
@@ -164,6 +167,7 @@ class Pembelian extends CI_Controller {
         $tahun2 = htmlspecialchars($this->input->post('tahun2', true));
 
         $data['bytahun'] = $this->v->filterbytahun($tahun2);
+        $data['sum'] = $this->v->sum();
         $this->load->view('report/laporan_by_tahun_pembelian', $data);
     }
 

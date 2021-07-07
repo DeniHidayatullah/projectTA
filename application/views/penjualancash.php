@@ -6,7 +6,7 @@
     <div class="card-header">
     <strong>Isi Form Dibawah Ini!</strong></div>
 	<div class="card-body">
-	<form action="<?= base_url('penjualan/proses_tambahcash') ?>" id="form-tambah" method="POST">
+	<form action="<?= base_url('penjualan/proses_tambahcash') ?>" id="form-tambah" method="POST" enctype='multipart/form-data'>
 									<div class="form-row">
 										<div class="form-group col-2">
 											<label>No. Penjualan</label>

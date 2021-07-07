@@ -37,6 +37,8 @@ class Home extends CI_Controller{
     
         foreach($data1 as $row) {
             $key = array_search(str_pad($row->tanggal,2,0,STR_PAD_LEFT),$arrayNumber);
+            // var_dump($row->tanggal);
+            // die;
             $arrayValuepembelian[$key] = $row->total;
         }
         // foreach($data2 as $row) {

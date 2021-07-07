@@ -71,13 +71,14 @@ class Model_master extends CI_Model {
       $end_month = $month[$count];
 
       if($start_month > $end_month) {
-          $date = (date("Y") - 1)."-".$start_month."-01 00:00:00";
+          $date = (date("Y") - 1)."-".$start_month;
       } else {
-          $date = date("Y")."-".$start_month."-01 00:00:00";
+          $date = date("Y")."-".$start_month;
       }
 
       $this->db->select("transaksi_pembelian.*, MONTH(tanggal)");
       $this->db->group_by("MONTH(tanggal)");
+      $this->db->where("tanggal >=",$date);
       return $this->db->get("transaksi_pembelian");
       
   }
@@ -87,4 +88,10 @@ class Model_master extends CI_Model {
 		$data = $this->db->query("SELECT * from transaksi_pembelian");
 		return $data->result();
 	}
+
+  function sum()
+    {
+        $query = $this->db->query("SELECT SUM(total) as grand from transaksi_pembelian");
+        return $query->result();
+    }
 }
