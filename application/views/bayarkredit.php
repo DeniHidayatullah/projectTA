@@ -18,8 +18,6 @@
 	</td>
 	<td class="dp">
 		<?= $this->input->post('dp') ?>
-		<input type="text" name="dp_hidden" id="dp" oninput="myFunction()" placeholder="Isikan 0 jika tidak ada DP" required hidden>
+		<input type="text" name="dp_hidden" id="dp" oninput="myFunction()" placeholder="Isikan 0 jika tidak ada DP" hidden>
 	</td>
 </tr>
-
-
