@@ -40,6 +40,9 @@
 									<td><strong>Waktu Penjualan</strong></td>
 									<td>:</td>
 									<td><?= $penjualan->tanggal ?></td>
+									<td><strong>Jumlah Pembayaran</strong></td>
+									<td>:</td>
+									<td> Rp <?= number_format($penjualan->harga, 0, ',', '.') ?> </td>
 								</tr>
 							</table>
 						</div>
@@ -82,31 +85,29 @@
 										</span>
 										<span class="text">Bayar Kredit</span>
 									</a>
-									<tr>
-										<td><strong>No</strong></td>
-										<td><strong>Tanggal Bayar</strong></td>
-										<td><strong>Harga</strong></td>
-										<td><strong>Total</strong></td>
-										<td><strong>Bayar</strong></td>
-										<td><strong>Status Bayar</strong></td>
-									</tr>
-								<tbody>
-									<tr>
-										<td><?= $no++ ?></td>
-										<td><?= $penjualan->tanggal ?></td>
-										<td>Rp <?= number_format($penjualan->harga, 0, ',', '.') ?></td>
-										<td>Rp <?= number_format($penjualan->total, 0, ',', '.') ?></td>
-										<td>Rp <?= number_format($bayar, 0, ',', '.') ?></td>
-										<?php
-										if ($penjualan->total == 1) { ?>
-											<td><?= 'Lunas' ?></td><?php
-																} else { ?>
-											<td><?= 'Belum Lunas' ?></td>
-										<?php } ?>
-									</tr>
 								<?php } ?>
+								<tr>
+									<td class="text-center"><strong>No</strong></td>
+									<td class="text-center"><strong>Tanggal Bayar</strong></td>
+									<td class="text-center"><strong>Nominal Angsuran</strong></td>
+									<td class="text-center"><strong>Angsuran ke-</strong></td>
+									<td class="text-center"><strong>Bayar</strong></td>
+									<td class="text-center"><strong>Status Bayar</strong></td>
+								</tr>
+								<tbody>
+									<?php
+									$no = 1;
+									foreach ($data_angsuran as $data) { ?>
+										<tr>
+											<td><?= $no++ ?></td>
+											<td><?= $data['tanggal'] ?></td>
+											<td>Rp <?= number_format($bayar, 0, ',', '.') ?></td>
+											<td class="text-center"><?= $data['angsuran_ke'] ?></td>
+											<td>Rp <?= number_format($bayar, 0, ',', '.') ?></td>
+											<td class="text-center"><span class="badge badge-success text-center">Lunas</span></td>
+										</tr>
+									<?php } ?>
 								</tbody>
-
 							</table>
 						</div>
 					</div>

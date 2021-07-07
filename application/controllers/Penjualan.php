@@ -148,13 +148,18 @@ class Penjualan extends CI_Controller
 
 	public function detail($nomor_faktur)
 	{
-		$this->data['title'] = 'Detail Penjualan';
-		$this->data['penjualan'] = $this->m_penjualan->lihat_nomor_faktur($nomor_faktur);
-		$this->data['all_detail_penjualan'] = $this->m_detail_penjualan->lihat_nomor_faktur($nomor_faktur);
-		$this->data['no'] = 1;
+		$data['title'] = 'Detail Penjualan';
+		$data['penjualan'] = $this->m_penjualan->lihat_nomor_faktur($nomor_faktur);
+		$data['all_detail_penjualan'] = $this->m_detail_penjualan->lihat_nomor_faktur($nomor_faktur);
+		$data['no'] = 1;
+		$data['data_angsuran'] = $this->m_penjualan->data_angsuran($nomor_faktur);
 
-		$this->load->view("template/header", $this->data);
-		$this->load->view('penjualandetail', $this->data);
+		// var_dump($data);
+		// die;
+
+
+		$this->load->view("template/header", $data);
+		$this->load->view('penjualandetail', $data);
 		$this->load->view("template/footer");
 	}
 
